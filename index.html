@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Saboor 🤍</title>
+<style>
+*{box-sizing:border-box}
+body{
+  margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+  background:linear-gradient(145deg,#fff8f6,#f7f1ff);
+  color:#342e31;overflow:hidden;padding:20px
+}
+.bg{position:fixed;inset:0;pointer-events:none;overflow:hidden}
+.float{position:absolute;opacity:.16;font-size:26px;animation:float 6s ease-in-out infinite}
+.float:nth-child(1){left:8%;top:14%}.float:nth-child(2){right:10%;top:20%;animation-delay:1.3s}
+.float:nth-child(3){left:13%;bottom:15%;animation-delay:2.1s}.float:nth-child(4){right:15%;bottom:12%;animation-delay:.7s}
+@keyframes float{50%{transform:translateY(-15px) rotate(10deg)}}
+.card{
+  position:relative;width:min(92vw,500px);min-height:500px;padding:42px 30px;
+  background:rgba(255,255,255,.82);backdrop-filter:blur(14px);
+  border:1px solid rgba(255,255,255,.95);border-radius:32px;
+  box-shadow:0 24px 80px rgba(70,48,60,.13);
+  display:flex;align-items:center;justify-content:center;text-align:center
+}
+.page{width:100%;animation:appear .45s ease}
+.hidden{display:none}
+@keyframes appear{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.icon{font-size:58px;margin-bottom:12px;animation:bob 2.2s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(-6px)}}
+h1{font-size:29px;line-height:1.15;margin:7px 0 18px;letter-spacing:-.6px}
+p{font-size:17px;line-height:1.65;margin:0 auto 23px;max-width:410px}
+button{
+  border:0;border-radius:999px;padding:14px 22px;margin:5px;font-size:16px;
+  font-weight:650;cursor:pointer;transition:.18s
+}
+button:active{transform:scale(.96)}
+.primary{background:#342e31;color:white;box-shadow:0 8px 22px rgba(52,46,49,.17)}
+.secondary{background:#f3edef;color:#40373b}
+.tiny{font-size:13px;opacity:.48;margin-top:20px}
+.signature{font-family:Georgia,serif;font-style:italic;font-size:19px;margin-top:25px}
+#noBtn{position:relative}
+.confetti{position:fixed;top:-35px;pointer-events:none;z-index:10;transition:transform 3s linear,opacity 3s}
+.progress{position:absolute;top:20px;left:50%;transform:translateX(-50%);font-size:12px;opacity:.35;letter-spacing:2px}
+</style>
+</head>
+<body>
+<div class="bg"><span class="float">♡</span><span class="float">✦</span><span class="float">♡</span><span class="float">✦</span></div>
+
+<main class="card">
+<div class="progress" id="progress">1 / 7</div>
+
+<section class="page" id="p1">
+  <div class="icon">👀</div>
+  <h1>Hey Saboor,</h1>
+  <p>I have something to tell you.</p>
+  <p>And because I can't just send a normal message like a normal person...<br><br>I made this instead. 😭</p>
+  <button class="primary" onclick="go(2)">What did you do now? 👀</button>
+</section>
+
+<section class="page hidden" id="p2">
+  <div class="icon">🥺</div>
+  <h1>Okay...</h1>
+  <p>I know I said something I shouldn't have said.</p>
+  <p>Maybe I didn't realize in that moment how it would make you feel, but I've been thinking about it for a while now.</p>
+  <p>And knowing that my words made you sad actually made me feel really bad. I never wanted to be the reason for that. 🤍</p>
+  <button class="primary" onclick="go(3)">I'm listening...</button>
+</section>
+
+<section class="page hidden" id="p3">
+  <div class="icon">🤍</div>
+  <h1>So, Mr. Qadiri...</h1>
+  <p>I'm sorry.<br><br>Like, actually sorry.</p>
+  <p>Not the little “sorryyy 🥺” I give you when I'm being annoying. A real one.</p>
+  <p>I wish I had chosen my words differently. Because no matter how I meant it, I don't like knowing that something I said hurt you.<br><br><strong>Especially you.</strong></p>
+  <p>Okay. Serious part over. 😭</p>
+  <button class="primary" onclick="go(4)">Continue 👀</button>
+</section>
+
+<section class="page hidden" id="p4">
+  <div class="icon">💻</div>
+  <h1>Now...</h1>
+  <p>Since you were sad because of me, I decided I at least owe you a little smile.</p>
+  <p>And since a normal message would've been way too easy...<br><br>I made you a whole website. 😭</p>
+  <p>Yes.<br><strong>An actual website.</strong><br>Just for you.</p>
+  <p>So please appreciate the effort, Mr. Qadiri.<br>My programming career may have peaked here.</p>
+  <button class="primary" onclick="go(5)">Okay, it's a little cute 😌</button>
+</section>
+
+<section class="page hidden" id="p5">
+  <div class="icon">🫶🏻</div>
+  <h1>Since you're already here...</h1>
+  <p>You might as well stay for a little longer. 👀</p>
+  <p>I have a tiny mission for you.</p>
+  <button class="primary" onclick="go(6)">What mission?</button>
+</section>
+
+<section class="page hidden" id="p6">
+  <div class="icon">🙂</div>
+  <h1>Your mission is very simple:</h1>
+  <p><strong>Smile.</strong><br><br>Just a little.<br>That's it.</p>
+  <p>I didn't make a whole website for you to sit there with that serious face. 🙂‍↔️</p>
+  <button class="primary" onclick="finish()">I smiled 😌</button>
+  <button class="secondary" id="noBtn" onclick="nope()" onmouseover="maybeRun()">No 🙄</button>
+  <p class="tiny hidden" id="reply"></p>
+</section>
+
+<section class="page hidden" id="p7">
+  <div class="icon">🤍</div>
+  <h1>There.</h1>
+  <p>That's all I wanted.</p>
+  <p>I know I can't unsay something I've already said.</p>
+  <p>But I <em>can</em> make sure the last thing I leave you with today isn't something that makes you sad.</p>
+  <p>So... I hope you're feeling a little better now.</p>
+  <p>And if this made you smile even for a second, then my extremely successful programming career was worth it. 😌</p>
+  <div class="signature">— Mozhdah 🤍</div>
+</section>
+</main>
+
+<script>
+let current=1, noCount=0;
+function go(n){
+  document.getElementById("p"+current).classList.add("hidden");
+  current=n;
+  const el=document.getElementById("p"+n);
+  el.classList.remove("hidden");
+  document.getElementById("progress").textContent=n+" / 7";
+}
+function finish(){ go(7); hearts(); }
+function nope(){
+  noCount++;
+  const r=document.getElementById("reply");
+  r.classList.remove("hidden");
+  if(noCount===1) r.textContent="Saboor. Be cooperative please. 😭";
+  else if(noCount===2) r.textContent="Mr. Qadiri, I'm literally asking for ONE smile. Don't make this difficult. 🙂‍↔️";
+  else {
+    r.textContent="Okay. I'm just going to assume you're smiling and being stubborn about it.";
+    const b=document.getElementById("noBtn");
+    b.textContent="Fine... I smiled 😌";
+    b.className="primary";
+    b.onmouseover=null;
+    b.onclick=finish;
+    b.style.transform="none";
+  }
+}
+function maybeRun(){
+  if(noCount>0 && noCount<3){
+    const b=document.getElementById("noBtn");
+    b.style.transform=`translate(${Math.random()*100-50}px,${Math.random()*50-25}px)`;
+  }
+}
+function hearts(){
+  const chars=["🤍","♡","✨"];
+  for(let i=0;i<30;i++){
+    const x=document.createElement("div");
+    x.className="confetti";
+    x.textContent=chars[Math.floor(Math.random()*chars.length)];
+    x.style.left=Math.random()*100+"vw";
+    x.style.fontSize=(14+Math.random()*18)+"px";
+    document.body.appendChild(x);
+    setTimeout(()=>{x.style.transform=`translateY(110vh) rotate(${Math.random()*500}deg)`;x.style.opacity="0"},30);
+    setTimeout(()=>x.remove(),3400);
+  }
+}
+</script>
+</body>
+</html>
